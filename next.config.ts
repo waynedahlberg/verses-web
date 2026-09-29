@@ -17,6 +17,14 @@ const nextConfig: NextConfig = {
         hostname: "res.cloudinary.com",
         pathname: "/dewmpixcd/image/upload/**",
       },
+      {
+        protocol: "https",
+        hostname: "img.youtube.com",
+      },
+      {
+        protocol: "https",
+        hostname: "avatars.githubusercontent.com",
+      },
     ],
   },
 }

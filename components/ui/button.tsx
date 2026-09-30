@@ -8,13 +8,13 @@ const buttonVariants = cva(
     variants: {
       variant: {
         default:
-          "border-[0.5px] border-white/10 bg-primary text-primary-foreground shadow-md ring shadow-black/15 ring-ring text-shadow-sm hover:bg-primary/90 focus-visible:ring-foreground dark:border-transparent [&_svg]:drop-shadow-sm",
+          "border-[0.5px] border-white/10 bg-primary text-primary-foreground shadow-md ring shadow-black/15 ring-ring text-shadow-sm hover:bg-primary/90 focus-visible:ring-foreground [&_svg]:drop-shadow-sm",
         neutral:
-          "border-[0.5px] border-white/10 bg-zinc-950 text-white shadow-md ring shadow-black/15 ring-zinc-950 text-shadow-sm hover:bg-zinc-950/90 focus-visible:ring-foreground dark:border-transparent [&_svg]:drop-shadow-sm",
+          "border-[0.5px] border-white/10 bg-zinc-950 text-white shadow-md ring shadow-black/15 ring-zinc-950 text-shadow-sm hover:bg-zinc-950/90 focus-visible:ring-foreground [&_svg]:drop-shadow-sm",
         destructive:
           "text-destructive-foreground border-[0.5px] border-white/10 bg-destructive shadow-md ring-1 shadow-black/25 ring-(--ring-color) [--ring-color:color-mix(in_oklab,black_15%,var(--color-destructive))] text-shadow-sm hover:bg-destructive/90 [&_svg]:drop-shadow-sm",
         outline:
-          "border border-transparent bg-card shadow-sm ring-1 shadow-black/10 ring-foreground/10 duration-200 hover:bg-muted/50 dark:ring-foreground/15 dark:hover:bg-muted/50",
+          "border border-transparent bg-card shadow-sm ring-1 shadow-black/10 ring-foreground/10 duration-200 hover:bg-muted/50",
         secondary:
           "bg-secondary text-secondary-foreground hover:bg-secondary/80",
         ghost: "hover:bg-foreground/5 hover:text-foreground",

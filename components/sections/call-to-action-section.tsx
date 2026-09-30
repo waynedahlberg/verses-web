@@ -10,7 +10,7 @@ export default function CallToActionSection() {
                 <Card className="relative overflow-hidden pl-8 pt-8 shadow-lg md:p-20">
                     <div className="max-w-xl max-md:pr-8">
                         <div className="relative">
-                            <h2 className="text-foreground text-balance text-3xl font-semibold md:text-4xl tracking-tight">Create, Sell and Grow</h2>
+                            <h2 className="text-balance text-3xl font-semibold md:text-4xl tracking-tight">Create, Sell and Grow</h2>
                             <p className="text-muted-foreground mb-6 mt-4 text-balance">Join a community of over 1000+ companies and developers who have already discovered the power of Tailark. </p>
 
                             <Button

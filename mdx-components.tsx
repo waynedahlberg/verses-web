@@ -13,7 +13,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
       <h2
         className={headingClass(
           className,
-          "mt-16 mb-4 scroll-mt-24 font-faculty text-2xl font-normal text-foreground",
+          "mt-16 mb-4 scroll-mt-24 font-faculty text-2xl font-normal",
         )}
         {...props}
       />
@@ -22,7 +22,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
       <h3
         className={headingClass(
           className,
-          "mt-8 mb-3 scroll-mt-24 font-faculty text-xl font-normal text-foreground",
+          "mt-8 mb-3 scroll-mt-24 font-faculty text-xl font-normal",
         )}
         {...props}
       />

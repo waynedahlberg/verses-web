@@ -11,8 +11,6 @@ import { MobileWallet } from "@/components/illustrations/mobile-wallet"
 
 const HERO_BG_LIGHT =
   "https://res.cloudinary.com/dewmpixcd/image/upload/v1790622370/verses-website/sky-07_opt_pvryaf.webp"
-const HERO_BG_DARK =
-  "https://res.cloudinary.com/dewmpixcd/image/upload/v1790622370/verses-website/sky-22_opt_lfykgx.webp"
 
 export default function HeroSection() {
   const { scrollY } = useScroll()
@@ -36,15 +34,7 @@ export default function HeroSection() {
                   alt="clouds"
                   width="5000"
                   height="5000"
-                  className="absolute inset-0 w-full md:-translate-y-1/12 dark:hidden"
-                  priority
-                />
-                <Image
-                  src={HERO_BG_DARK}
-                  alt="clouds"
-                  width="5000"
-                  height="5000"
-                  className="absolute inset-0 w-full opacity-50 not-dark:hidden"
+                  className="absolute inset-0 w-full md:-translate-y-1/12"
                   priority
                 />
               </m.div>

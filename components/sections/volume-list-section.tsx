@@ -65,7 +65,7 @@ export default function VolumeListSection() {
             <div className="@container mx-auto max-w-5xl px-6">
                 <div className="text-center">
                     <p className="text-muted-foreground text-xs font-medium uppercase tracking-wide">Trusted by the best</p>
-                    <h2 className="text-foreground mt-4 text-balance text-4xl font-semibold tracking-tight">Our investors</h2>
+                    <h2 className="mt-4 text-balance font-faculty text-4xl font-regular tracking-tight">Our investors</h2>
                 </div>
 
                 <div className="mt-16 grid grid-cols-2 gap-4 md:grid-cols-5">
@@ -87,7 +87,7 @@ export default function VolumeListSection() {
                 </div>
 
                 <div className="mt-16">
-                    <h3 className="text-foreground text-center text-lg font-medium">Angel investors</h3>
+                    <h3 className="text-center text-lg font-medium">Angel investors</h3>
 
                     <div className="@md:grid-cols-2 @2xl:grid-cols-3 mt-8 grid gap-4">
                         {volumes.map((volume) => (

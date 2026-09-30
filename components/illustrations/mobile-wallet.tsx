@@ -15,7 +15,7 @@ export const MobileWallet = () => (
                         <div className="rounded-xs flex size-3 bg-emerald-600">
                             <TrendingUp className="m-auto size-2 text-white" />
                         </div>
-                        <span className="border-t border-transparent text-[11px] font-medium text-emerald-600 dark:text-emerald-400">65%</span>
+                        <span className="border-t border-transparent text-[11px] font-medium text-emerald-600">65%</span>
                     </div>
                 </div>
 

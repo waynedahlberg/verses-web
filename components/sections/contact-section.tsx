@@ -15,7 +15,7 @@ export default function Contact() {
         </p>
 
         <div className="mt-10 grid gap-3 @lg:grid-cols-2 @lg:gap-y-12">
-          <div className="flex flex-col rounded-xl border bg-white/25 p-6 backdrop-blur-sm dark:bg-black/25">
+          <div className="flex flex-col rounded-xl border bg-white/25 p-6 backdrop-blur-sm">
             <h2 className="font-medium">Contact Sales</h2>
             <p className="mt-2 mb-4 text-balance text-muted-foreground">
               Get in touch with our sales team for more information.
@@ -28,7 +28,7 @@ export default function Contact() {
               className="mt-auto w-fit"
             />
           </div>
-          <div className="flex flex-col rounded-xl border bg-white/25 p-6 backdrop-blur-sm dark:bg-black/25">
+          <div className="flex flex-col rounded-xl border bg-white/25 p-6 backdrop-blur-sm">
             <h2 className="text-lg font-medium">Help and Support</h2>
             <p className="mt-2 mb-4 text-balance text-muted-foreground">
               Find answers to your questions and get support for our services.
@@ -53,7 +53,7 @@ export default function Contact() {
           </div>
 
           <div className="flex flex-col p-6">
-            <h2 className="mb-2 text-sm text-muted-foreground">General</h2>
+            <h2 className="mb-2 text-sm">General</h2>
             <Link
               href="mailto:hello@tailark.com"
               className="font-medium hover:underline hover:decoration-primary"
@@ -62,7 +62,7 @@ export default function Contact() {
             </Link>
           </div>
           <div className="flex flex-col p-6">
-            <h2 className="mb-2 text-sm text-muted-foreground">Support</h2>
+            <h2 className="mb-2 text-sm">Support</h2>
             <Link
               href="mailto:support@tailark.com"
               className="font-medium hover:underline hover:decoration-primary"
@@ -72,7 +72,7 @@ export default function Contact() {
           </div>
 
           <div className="flex flex-col p-6">
-            <h2 className="mb-2 text-sm text-muted-foreground">X/Twitter</h2>
+            <h2 className="mb-2 text-sm">X/Twitter</h2>
             <Link
               href="https://twitter.com/tailarkui "
               className="font-medium hover:underline hover:decoration-primary"
@@ -81,7 +81,7 @@ export default function Contact() {
             </Link>
           </div>
           <div className="flex flex-col p-6">
-            <h2 className="mb-2 text-sm text-muted-foreground">GitHub</h2>
+            <h2 className="mb-2 text-sm">GitHub</h2>
             <Link
               href="https://github.com/tailark"
               className="font-medium hover:underline hover:decoration-primary"

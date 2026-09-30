@@ -77,7 +77,7 @@ export function BlogPostGrid({ posts }: { posts: PostSummary[] }) {
               {formatDate(article.publishedAt)}
             </time>
 
-            <h2 className="font-faculty text-lg font-normal text-foreground">
+            <h2 className="font-faculty text-lg font-normal">
               <Link
                 href={`/blog/${article.slug}`}
                 className="before:absolute before:inset-0"
@@ -128,7 +128,7 @@ export function BlogPostGrid({ posts }: { posts: PostSummary[] }) {
                   >
                     {formatDate(article.publishedAt)}
                   </time>
-                  <h2 className="font-faculty text-lg font-normal text-foreground">
+                  <h2 className="font-faculty text-lg font-normal">
                     <Link
                       href={`/blog/${article.slug}`}
                       className="before:absolute before:inset-0"

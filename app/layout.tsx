@@ -1,8 +1,7 @@
 import type { Metadata } from "next"
-import { Faculty_Glyphic } from "next/font/google"
+import { Faculty_Glyphic, Geist_Mono } from "next/font/google"
 import Header from "@/components/header"
 import FooterSection from "@/components/sections/footer-section"
-import { ThemeProvider } from "@/components/theme-provider"
 import "./globals.css"
 
 const faculty = Faculty_Glyphic({
@@ -10,6 +9,12 @@ const faculty = Faculty_Glyphic({
   subsets: ["latin"],
   display: "swap",
   variable: "--font-faculty-glyphic",
+})
+
+const geistMono = Geist_Mono({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-geist-mono",
 })
 
 export const metadata: Metadata = {
@@ -26,15 +31,16 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className={faculty.variable} suppressHydrationWarning>
+    <html
+      lang="en"
+      className={`${faculty.variable} ${geistMono.variable} antialiased`}
+    >
       <body>
-        <ThemeProvider>
-          <div className="flex min-h-dvh flex-col">
-            <Header />
-            <div className="flex flex-1 flex-col">{children}</div>
-            <FooterSection />
-          </div>
-        </ThemeProvider>
+        <div className="flex min-h-dvh flex-col">
+          <Header />
+          <div className="flex flex-1 flex-col">{children}</div>
+          <FooterSection />
+        </div>
       </body>
     </html>
   )

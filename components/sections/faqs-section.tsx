@@ -50,7 +50,7 @@ export default function FAQSection() {
             <div className="mx-auto max-w-5xl px-1 md:px-6">
                 <div className="grid max-md:gap-8 md:grid-cols-5 md:divide-x md:border">
                     <div className="max-w-lg max-md:px-6 md:col-span-2 md:p-10 lg:p-12">
-                        <h2 className="text-foreground text-4xl font-semibold tracking-tight">FAQs</h2>
+                        <h2 className="text-4xl font-semibold tracking-tight">FAQs</h2>
                         <p className="text-muted-foreground mt-4 text-balance text-lg">Your questions answered</p>
                         <p className="text-muted-foreground mt-6 max-md:hidden">
                             Can't find what you're looking for? Contact our{' '}
@@ -67,7 +67,7 @@ export default function FAQSection() {
                             <div
                                 className="space-y-4"
                                 key={item.group}>
-                                <h3 className="text-foreground pl-6 text-lg font-semibold">{item.group}</h3>
+                                <h3 className="pl-6 text-lg font-semibold">{item.group}</h3>
                                 <Accordion
                                     className="-space-y-1">
                                     {item.items.map((item) => (

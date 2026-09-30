@@ -63,7 +63,7 @@ export default function TestimonialsSection() {
     <section id="reviews" className="bg-background py-12 md:py-24">
       <div className="mx-auto max-w-5xl px-6">
         <div className="mx-auto max-w-2xl text-center text-balance">
-          <h2 className="mb-4 font-faculty text-3xl font-normal tracking-tight text-foreground md:text-4xl">
+          <h2 className="mb-4 font-faculty text-3xl font-normal tracking-tight md:text-4xl">
             What our customers are saying about Tailark Quartz
           </h2>
           <p className="mb-6 text-muted-foreground md:mb-12 lg:mb-16">

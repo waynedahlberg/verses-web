@@ -25,9 +25,9 @@ export const Notes3 = () => {
   return (
     <div className="max-w-xs min-w-2xs px-4 pt-4 selection:bg-amber-500/25">
       <div className="relative">
-        <div className="absolute right-1 -bottom-2 left-1 h-full rotate-2 rounded-sm bg-linear-to-br from-amber-200 to-yellow-300 shadow-sm dark:from-amber-300 dark:to-yellow-400" />
-        <div className="absolute right-0.5 -bottom-1 left-0.5 h-full -rotate-1 rounded-sm bg-linear-to-br from-amber-100 to-yellow-200 shadow-sm dark:from-amber-200 dark:to-yellow-300" />
-        <div className="relative rounded-sm bg-linear-to-br from-amber-100 to-yellow-200 p-5 pb-12 shadow-lg shadow-amber-900/15 dark:from-amber-300 dark:to-yellow-300">
+        <div className="absolute right-1 -bottom-2 left-1 h-full rotate-2 rounded-sm bg-linear-to-br from-amber-200 to-yellow-300 shadow-sm" />
+        <div className="absolute right-0.5 -bottom-1 left-0.5 h-full -rotate-1 rounded-sm bg-linear-to-br from-amber-100 to-yellow-200 shadow-sm" />
+        <div className="relative rounded-sm bg-linear-to-br from-amber-100 to-yellow-200 p-5 pb-12 shadow-lg shadow-amber-900/15">
           <div className="mb-4 flex items-center justify-between pt-2">
             <span className="text-sm font-semibold text-amber-950">
               Quick Tasks
@@ -57,7 +57,7 @@ export const Notes3 = () => {
                     "text-sm font-medium",
                     task.completed
                       ? "text-amber-800/60 line-through"
-                      : "text-amber-900 dark:text-amber-950"
+                      : "text-amber-900"
                   )}
                 >
                   {task.text}

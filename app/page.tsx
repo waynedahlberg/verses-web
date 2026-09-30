@@ -13,7 +13,7 @@ export default function Page() {
     <main>
       <HeroSection />
       <FeaturesSection />
-      <VolumeListSection />
+      {/* <VolumeListSection /> */}
       <FeaturesCarouselSection />
       <DescriptionListSection />
       <TestimonialsSection />

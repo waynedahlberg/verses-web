@@ -13,7 +13,7 @@ export default function FeaturesSection() {
         <div className="grid items-center gap-12 pb-12 md:grid-cols-2">
           <div>
             <div className="max-w-md">
-              <h2 className="font-faculty text-4xl font-normal tracking-tight text-balance text-foreground">
+              <h2 className="font-faculty text-4xl font-normal tracking-tight text-balance">
                 Power of LLMs in Your Editor
               </h2>
               <p className="my-6 text-lg text-balance">
@@ -40,14 +40,14 @@ export default function FeaturesSection() {
               />
             </div>
           </div>
-          <div className="relative overflow-hidden rounded-2xl bg-white p-2 dark:bg-black">
+          <div className="relative overflow-hidden rounded-2xl bg-white p-2">
             <Image
               src={FEATURES_IMAGE}
               alt=""
               width={1600}
               height={1200}
               aria-hidden
-              className="pointer-events-none absolute inset-0 size-full scale-125 object-cover opacity-90 blur-2xl brightness-125 saturate-150 dark:opacity-80 dark:brightness-100"
+              className="pointer-events-none absolute inset-0 size-full scale-125 object-cover opacity-90 blur-2xl brightness-125 saturate-150"
             />
             <div className="relative overflow-hidden rounded-xl border border-dashed border-white/25 shadow-lg shadow-black/20">
               <Image

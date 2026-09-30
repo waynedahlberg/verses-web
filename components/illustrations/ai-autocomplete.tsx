@@ -14,7 +14,7 @@ export const AiAutocomplete = () => {
                 </div>
             </div>
 
-            <div className="bg-illustration ring-border-illustration dark:ring-foreground/25 shadow-black/6.5 mt-2 overflow-hidden rounded-xl shadow-lg ring-1">
+            <div className="bg-illustration ring-border-illustration shadow-black/6.5 mt-2 overflow-hidden rounded-xl shadow-lg ring-1">
                 <div className="bg-primary/10 border-primary/20 flex items-center gap-2 border-b px-3 py-2">
                     <Sparkles className="text-primary fill-primary *:nth-2:text-purple-400 *:nth-3:text-purple-400 *:not-first:text-foreground/25 size-3.5" />
                     <div className="text-xs font-medium">AI Suggestions</div>

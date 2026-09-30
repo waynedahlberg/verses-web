@@ -5,7 +5,7 @@ export default function DescriptionListSection() {
         <section className="bg-background py-16 md:py-32">
             <div className="mx-auto max-w-5xl px-6">
                 <div className="grid gap-6 md:grid-cols-2 md:gap-12 lg:grid-cols-3 lg:gap-24">
-                    <h2 className="text-foreground text-balance text-4xl font-semibold tracking-tight">AI-powered Marketing Tools</h2>
+                    <h2 className="text-balance text-4xl font-semibold tracking-tight">AI-powered Marketing Tools</h2>
                     <div className="@container lg:col-span-2">
                         <dl className="@md:grid-cols-2 grid gap-6 *:space-y-2">
                             <div>

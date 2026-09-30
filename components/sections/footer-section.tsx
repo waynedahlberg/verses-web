@@ -54,20 +54,16 @@ const links = [
 export default function FooterSection() {
   return (
     <footer className="bg-background py-8 sm:py-20">
-      <div className="mx-auto max-w-5xl space-y-16 px-6">
+      <div className="mx-auto max-w-5xl px-6">
         <div className="grid gap-12 md:grid-cols-5">
-          <div className="space-y-6 md:col-span-2 md:space-y-12">
+          <div className="md:col-span-2">
             <Link href="/" aria-label="go home" className="block size-fit">
               <Logo uniColor />
             </Link>
-
-            <p className="text-sm text-balance text-muted-foreground">
-              Tailark is a platform for building AI-powered applications.
-            </p>
           </div>
 
-          <div className="col-span-3 grid gap-6 sm:grid-cols-3">
-            {links.map((link, index) => (
+          <div className="grid gap-6 sm:grid-cols-3 md:col-span-3">
+            {links.map((link) => (
               <div key={link.group} className="space-y-4 text-sm">
                 <span className="block font-medium">{link.group}</span>
 
@@ -132,22 +128,39 @@ export default function FooterSection() {
             </div>
           </div>
         </div>
+
         <div
           aria-hidden
-          className="h-px bg-[linear-gradient(90deg,var(--color-foreground)_1px,transparent_1px)] bg-size-[6px_1px] bg-repeat-x opacity-25"
+          className="mt-16 h-px bg-[linear-gradient(90deg,var(--color-foreground)_1px,transparent_1px)] bg-size-[6px_1px] bg-repeat-x opacity-25"
         />
-        <div className="flex flex-wrap justify-between gap-4">
-          <span className="text-sm text-muted-foreground">
-            © <CopyrightYear /> Tailark, All rights reserved{" "}
-          </span>
 
-          <div className="flex items-center gap-2 rounded-full border border-transparent bg-card py-1 pr-4 pl-2 shadow ring-1 ring-foreground/5">
-            <div className="relative flex size-3">
-              <span className="absolute inset-0 block size-full animate-pulse rounded-full bg-emerald-100 transition-none duration-1500"></span>
-              <span className="relative m-auto block size-1 rounded-full bg-emerald-500"></span>
-            </div>
-            <span className="text-sm">All Systems Normal</span>
+        <div className="mt-8 flex flex-col gap-8 sm:flex-row sm:items-start sm:justify-between sm:gap-12">
+          <div className="max-w-xl space-y-2 text-sm leading-relaxed text-muted-foreground">
+            <p className="font-medium text-foreground">Important Disclaimer</p>
+            <p>
+              Verses is not affiliated with{" "}
+              <span className="font-medium text-foreground">
+                The Church of Jesus Christ of Latter-day Saints
+              </span>
+              . No endorsement is expressed or implied.
+            </p>
+            <p>
+              Scripture content is sourced from the public domain. Audio content
+              is created with intelligence models from Mixtral AI.
+            </p>
           </div>
+
+          <p className="shrink-0 text-sm text-muted-foreground sm:pb-0.5 sm:text-end">
+            © <CopyrightYear /> Verses
+            <span className="mx-2 text-foreground/25" aria-hidden>
+              ·
+            </span>
+            Made with <span className="sr-only">love</span>
+            <span className="text-verses-gold" aria-hidden>
+              ♥
+            </span>{" "}
+            in Utah
+          </p>
         </div>
       </div>
     </footer>

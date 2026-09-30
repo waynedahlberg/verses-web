@@ -12,8 +12,6 @@ import { getPosts } from "@/lib/posts"
 
 const SKY_LIGHT =
   "https://res.cloudinary.com/dewmpixcd/image/upload/v1790622370/verses-website/sky-07_opt_pvryaf.webp"
-const SKY_DARK =
-  "https://res.cloudinary.com/dewmpixcd/image/upload/v1790622370/verses-website/sky-22_opt_lfykgx.webp"
 
 export const metadata: Metadata = {
   title: "Blog",
@@ -32,15 +30,7 @@ export default function BlogPage() {
             alt=""
             width={5000}
             height={5000}
-            className="absolute inset-0 w-full md:-translate-y-1/12 dark:hidden"
-            priority
-          />
-          <Image
-            src={SKY_DARK}
-            alt=""
-            width={5000}
-            height={5000}
-            className="absolute inset-0 w-full opacity-50 not-dark:hidden"
+            className="absolute inset-0 w-full md:-translate-y-1/12"
             priority
           />
         </div>
@@ -53,9 +43,8 @@ export default function BlogPage() {
             </BreadcrumbItem>
           </BreadcrumbList>
         </Breadcrumb>
-        <h1 className="mt-4 font-faculty text-4xl font-normal tracking-tight text-balance text-muted-foreground md:text-5xl">
-          News, insights and more from{" "}
-          <strong className="font-normal text-foreground">Verses</strong>
+        <h1 className="mt-4 font-faculty text-4xl font-normal tracking-tight text-balance md:text-5xl">
+          News, insights and more from <strong className="font-normal">Verses</strong>
         </h1>
       </ContentColumn>
       <div className="mt-12">

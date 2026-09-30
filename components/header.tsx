@@ -1,6 +1,5 @@
 "use client"
 import Link from "next/link"
-import { Button } from "@/components/ui/button"
 import React from "react"
 import { useScroll, useMotionValueEvent } from "motion/react"
 import {
@@ -35,7 +34,6 @@ import {
 } from "@/components/ui/accordion"
 import { cn } from "@/lib/utils"
 import { Logo } from "@/components/ui/logo"
-import { ThemeToggle } from "@/components/theme-toggle"
 
 interface FeatureLink {
   href: string
@@ -189,9 +187,8 @@ export default function Header() {
               <MobileMenu closeMenu={() => setIsMobileMenuOpen(false)} />
             )}
 
-            <div className="mb-6 hidden w-full flex-wrap items-center justify-end space-y-8 in-data-[state=active]:flex max-lg:in-data-[state=active]:mt-6 md:flex-nowrap lg:m-0 lg:flex lg:w-fit lg:gap-6 lg:space-y-0 lg:border-transparent lg:bg-transparent lg:p-0 lg:shadow-none dark:shadow-none dark:lg:bg-transparent">
+            <div className="mb-6 hidden w-full flex-wrap items-center justify-end space-y-8 in-data-[state=active]:flex max-lg:in-data-[state=active]:mt-6 md:flex-nowrap lg:m-0 lg:flex lg:w-fit lg:gap-6 lg:space-y-0 lg:border-transparent lg:bg-transparent lg:p-0 lg:shadow-none">
               <div className="flex w-full flex-col items-center space-y-3 sm:flex-row sm:gap-3 sm:space-y-0 md:w-fit">
-                <ThemeToggle />
                 {/* <Button
                   render={<Link href="#">Sign In</Link>}
                   nativeButton={false}

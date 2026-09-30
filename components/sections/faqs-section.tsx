@@ -74,8 +74,10 @@ export default function FAQSection() {
                                         <AccordionItem
                                             key={item.id}
                                             value={item.id}
-                                            className="data-open:bg-card data-open:ring-border data-open:shadow-black/6.5 group peer rounded-xl border-none px-6 py-1 data-open:border-none data-open:shadow-sm data-open:ring-1">
-                                            <AccordionTrigger className="not-group-last:border-b cursor-pointer rounded-none text-base transition-none hover:no-underline data-open:border-transparent hover:[&>svg]:translate-y-1 hover:data-open:[&>svg]:translate-y-0">{item.question}</AccordionTrigger>
+                                            className="data-open:bg-card data-open:ring-border data-open:shadow-black/6.5 group peer rounded-xl border-none px-6 py-1 ring-1 ring-transparent transition-[background-color,box-shadow,ring-color] duration-300 ease-out data-open:border-none data-open:shadow-sm">
+                                            <AccordionTrigger className="cursor-pointer rounded-none text-base not-group-last:border-b hover:no-underline data-panel-open:border-transparent hover:[&>svg]:translate-y-1 hover:data-panel-open:[&>svg]:translate-y-0">
+                                              {item.question}
+                                            </AccordionTrigger>
                                             <AccordionContent>
                                                 <p className="text-muted-foreground text-base">{item.answer}</p>
                                             </AccordionContent>

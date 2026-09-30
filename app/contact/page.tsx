@@ -15,7 +15,7 @@ export const metadata: Metadata = {
 export default function ContactPage() {
   return (
     <main className="relative flex flex-1 flex-col overflow-hidden">
-      <div className="pointer-events-none absolute inset-x-0 top-0 h-[50rem] overflow-hidden mask-radial-[137%_100%] mask-radial-from-49% mask-radial-at-top">
+      <div className="pointer-events-none absolute inset-x-0 -top-14.5 h-[50rem] overflow-hidden mask-radial-[137%_100%] mask-radial-from-49% mask-radial-at-top">
         <div className="aspect-video md:aspect-square">
           <Image
             src={SKY_LIGHT}

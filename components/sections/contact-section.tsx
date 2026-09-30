@@ -8,12 +8,12 @@ export default function Contact() {
             <div className="@container mx-auto max-w-5xl px-2">
                 <div className="mx-auto max-w-4xl">
                     <div className="mx-auto max-w-2xl px-6">
-                        <h1 className="font-faculty text-4xl font-semibold tracking-tight text-balance md:text-5xl">Contact Us</h1>
+                        <h1 className="font-faculty text-4xl font-normal tracking-tight text-balance md:text-5xl">Contact Us</h1>
                         <p className="text-muted-foreground mt-4 text-balance text-lg">Find answers to your questions and get support for our services.</p>
                     </div>
 
                     <div className="@lg:grid-cols-2 @lg:gap-y-12 mx-auto mt-10 grid max-w-2xl gap-3">
-                        <div className="flex flex-col rounded-xl border bg-white/25 p-6 backdrop-blur-sm">
+                        <div className="flex flex-col rounded-xl border bg-white/25 p-6 backdrop-blur-sm dark:bg-black/25">
                             <h2 className="font-medium">Contact Sales</h2>
                             <p className="text-muted-foreground mb-4 mt-2 text-balance">Get in touch with our sales team for more information.</p>
                             <Button
@@ -24,7 +24,7 @@ export default function Contact() {
                                 className="mt-auto w-fit"
                             />
                         </div>
-                        <div className="flex flex-col rounded-xl border bg-white/25 p-6 backdrop-blur-sm">
+                        <div className="flex flex-col rounded-xl border bg-white/25 p-6 backdrop-blur-sm dark:bg-black/25">
                             <h2 className="text-lg font-medium">Help and Support</h2>
                             <p className="text-muted-foreground mb-4 mt-2 text-balance">Find answers to your questions and get support for our services.</p>
 

@@ -24,7 +24,7 @@ export default function FeaturesSliderSection() {
                 }}
                 className="mx-auto max-w-5xl">
                 <div className="mb-6 flex flex-wrap items-end justify-between gap-4 px-6 lg:mb-10">
-                    <h2 className="max-w-xs text-balance font-faculty text-4xl font-semibold tracking-tight text-foreground">Powerful features for modern teams</h2>
+                    <h2 className="max-w-xs text-balance font-faculty text-4xl font-normal tracking-tight text-foreground">Powerful features for modern teams</h2>
                     <div className="flex items-center gap-2">
                         <CarouselPrevious />
                         <CarouselNext />

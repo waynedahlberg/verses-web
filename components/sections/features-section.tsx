@@ -13,7 +13,7 @@ export default function FeaturesSection() {
         <div className="grid items-center gap-12 pb-12 md:grid-cols-2">
           <div>
             <div className="max-w-md">
-              <h2 className="text-4xl font-semibold tracking-tight text-balance text-foreground">
+              <h2 className="font-faculty text-4xl font-semibold tracking-tight text-balance text-foreground">
                 Power of LLMs in Your Editor
               </h2>
               <p className="my-6 text-lg text-balance">

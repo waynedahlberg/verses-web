@@ -1,11 +1,21 @@
-import HeroSection from "@/components/sections/hero-section-2"
+import HeroSection from "@/components/sections/hero-section"
 import FeaturesSection from "@/components/sections/features-section"
+import FeaturesCarouselSection from "@/components/sections/features-carousel"
+import TestimonialsSection from "@/components/sections/testimonials"
+import NoteFromMeSection from "@/components/sections/note-from-me"
+import CallToActionSection from "@/components/sections/call-to-action-section"
+import FAQSection from "@/components/sections/faqs-section"
 
 export default function Page() {
   return (
     <main>
       <HeroSection />
       <FeaturesSection />
+      <FeaturesCarouselSection />
+      <TestimonialsSection />
+      <NoteFromMeSection />
+      <CallToActionSection />
+      <FAQSection />
     </main>
   )
 }

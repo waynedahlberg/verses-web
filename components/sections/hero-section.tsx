@@ -56,7 +56,7 @@ export default function HeroSection() {
               <div className="relative mx-auto max-w-5xl px-6">
                 <div className="mb-12 text-center">
                   <div>
-                    <h1 className="mx-auto max-w-2xl text-4xl font-semibold tracking-tight text-balance md:text-5xl lg:mt-8">
+                    <h1 className="mx-auto max-w-2xl font-faculty text-4xl font-semibold tracking-tight text-balance md:text-5xl lg:mt-8">
                       Your Personal AI, With you Anywhere
                     </h1>
                     <p className="mx-auto mt-6 max-w-2xl text-xl text-balance">

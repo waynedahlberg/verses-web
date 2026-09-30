@@ -8,6 +8,7 @@ import {
   BreadcrumbLink,
   BreadcrumbList,
 } from "@/components/ui/breadcrumb"
+import { ContentColumn } from "@/components/content-column"
 import { formatDate } from "@/lib/format-date"
 import { getPostContent, getPosts } from "@/lib/posts"
 
@@ -65,20 +66,19 @@ export default async function BlogPostPage({
   const { post, Content } = loaded
 
   return (
-    <div className="relative mx-auto max-w-5xl px-6">
-      <div className="grid max-lg:gap-4 lg:grid-cols-[1fr_auto_1fr]">
-        <Breadcrumb>
-          <BreadcrumbList>
-            <BreadcrumbItem>
-              <BreadcrumbLink render={<Link href="/blog" />}>
-                Blog
-              </BreadcrumbLink>
-            </BreadcrumbItem>
-          </BreadcrumbList>
-        </Breadcrumb>
+    <ContentColumn>
+      <Breadcrumb>
+        <BreadcrumbList>
+          <BreadcrumbItem>
+            <BreadcrumbLink render={<Link href="/blog" />}>
+              Blog
+            </BreadcrumbLink>
+          </BreadcrumbItem>
+        </BreadcrumbList>
+      </Breadcrumb>
 
-        <article className="max-w-xl">
-          <header className="mb-8">
+      <article className="mt-4">
+        <header className="mb-8">
             <time
               className="text-sm text-muted-foreground"
               dateTime={post.publishedAt}
@@ -114,21 +114,18 @@ export default async function BlogPostPage({
             </div>
           </header>
 
-          <div className="max-w-2xl">
-            <div className="relative mb-12 overflow-hidden rounded-xl border shadow shadow-black/5 md:-mx-12 lg:-mx-16">
-              <Image
-                src={post.image}
-                alt=""
-                width={1200}
-                height={675}
-                className="aspect-video w-full object-cover"
-                priority
-              />
-            </div>
-            <Content />
-          </div>
-        </article>
-      </div>
-    </div>
+        <div className="relative mb-12 overflow-hidden rounded-xl border shadow shadow-black/5">
+          <Image
+            src={post.image}
+            alt=""
+            width={1200}
+            height={675}
+            className="aspect-video w-full object-cover"
+            priority
+          />
+        </div>
+        <Content />
+      </article>
+    </ContentColumn>
   )
 }

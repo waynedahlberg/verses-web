@@ -7,6 +7,7 @@ import {
   BreadcrumbPage,
 } from "@/components/ui/breadcrumb"
 import { BlogPostGrid } from "@/components/blog/post-grid"
+import { ContentColumn } from "@/components/content-column"
 import { getPosts } from "@/lib/posts"
 
 const SKY_LIGHT =
@@ -44,28 +45,26 @@ export default function BlogPage() {
           />
         </div>
       </div>
-      <div className="relative mx-auto mt-16 w-full max-w-5xl px-6 md:mt-24">
-        <div className="max-w-md">
-          <Breadcrumb>
-            <BreadcrumbList>
-              <BreadcrumbItem>
-                <BreadcrumbPage>Blog</BreadcrumbPage>
-              </BreadcrumbItem>
-            </BreadcrumbList>
-          </Breadcrumb>
-          <h1 className="mt-4 font-faculty text-4xl font-normal tracking-tight text-balance text-muted-foreground md:text-5xl">
-            News, insights and more from{" "}
-            <strong className="font-normal text-foreground">Verses</strong>
-          </h1>
-        </div>
-      </div>
+      <ContentColumn className="relative mt-16 md:mt-24">
+        <Breadcrumb>
+          <BreadcrumbList>
+            <BreadcrumbItem>
+              <BreadcrumbPage>Blog</BreadcrumbPage>
+            </BreadcrumbItem>
+          </BreadcrumbList>
+        </Breadcrumb>
+        <h1 className="mt-4 font-faculty text-4xl font-normal tracking-tight text-balance text-muted-foreground md:text-5xl">
+          News, insights and more from{" "}
+          <strong className="font-normal text-foreground">Verses</strong>
+        </h1>
+      </ContentColumn>
       <div className="mt-12">
         {posts.length > 0 ? (
           <BlogPostGrid posts={posts} />
         ) : (
-          <p className="mx-auto max-w-5xl px-6 text-muted-foreground">
-            No posts yet.
-          </p>
+          <ContentColumn>
+            <p className="text-muted-foreground">No posts yet.</p>
+          </ContentColumn>
         )}
       </div>
     </>

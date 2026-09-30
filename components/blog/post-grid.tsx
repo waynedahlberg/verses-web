@@ -3,6 +3,7 @@ import Image from "next/image"
 import { ChevronRight } from "lucide-react"
 import { Card } from "@/components/ui/card"
 import { cn } from "@/lib/utils"
+import { ContentColumn } from "@/components/content-column"
 import { formatDate } from "@/lib/format-date"
 import type { PostSummary } from "@/lib/post-frontmatter"
 
@@ -47,11 +48,11 @@ function ReadLabel() {
 
 export function BlogPostGrid({ posts }: { posts: PostSummary[] }) {
   const moreArticles = posts.slice(3)
-  const lastArticles = moreArticles.length % 3 || 3
+  const lastArticles = moreArticles.length % 2 || 2
 
   return (
-    <div className="mx-auto max-w-5xl px-6">
-      <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+    <ContentColumn>
+      <div className="grid gap-6 sm:grid-cols-2">
         {posts.slice(0, 3).map((article, index) => (
           <Card
             key={article.slug}
@@ -64,7 +65,7 @@ export function BlogPostGrid({ posts }: { posts: PostSummary[] }) {
                 width={1600}
                 height={900}
                 className="h-full w-full object-cover"
-                sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+                sizes="(min-width: 640px) 20rem, 100vw"
                 priority={index === 0}
               />
             </div>
@@ -106,17 +107,13 @@ export function BlogPostGrid({ posts }: { posts: PostSummary[] }) {
             />
             <div
               aria-hidden
-              className="pointer-events-none absolute -inset-y-6 inset-x-0 left-1/2 w-6 -translate-x-3 border-x max-sm:hidden lg:left-1/3 lg:-translate-x-4"
-            />
-            <div
-              aria-hidden
-              className="pointer-events-none absolute -inset-y-6 inset-x-0 right-1/3 ml-auto w-6 translate-x-4 border-x max-lg:hidden"
+              className="pointer-events-none absolute -inset-y-6 inset-x-0 left-1/2 w-6 -translate-x-3 border-x max-sm:hidden"
             />
             <div
               aria-hidden
               className="pointer-events-none absolute -inset-x-6 -inset-y-px border-y"
             />
-            <div className="grid gap-x-6 sm:grid-cols-2 lg:grid-cols-3">
+            <div className="grid gap-x-6 sm:grid-cols-2">
               {moreArticles.map((article, index) => (
                 <article
                   key={article.slug}
@@ -152,6 +149,6 @@ export function BlogPostGrid({ posts }: { posts: PostSummary[] }) {
           </div>
         </div>
       )}
-    </div>
+    </ContentColumn>
   )
 }

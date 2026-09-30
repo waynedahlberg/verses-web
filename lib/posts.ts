@@ -3,12 +3,28 @@ import path from "node:path"
 import type { ComponentType } from "react"
 import matter from "gray-matter"
 import {
+  isDraftFrontmatter,
   parsePostFrontmatter,
   type PostSummary,
 } from "@/lib/post-frontmatter"
 
 const postsDirectory = path.join(process.cwd(), "content/blog")
 const slugPattern = /^[a-z0-9]+(?:-[a-z0-9]+)*$/
+
+export function slugFromMdxFilename(filename: string): string {
+  if (!filename.endsWith(".mdx")) {
+    throw new Error(`Expected an MDX file: content/blog/${filename}`)
+  }
+
+  const slug = filename.slice(0, -".mdx".length)
+  if (!slugPattern.test(slug)) {
+    throw new Error(
+      `Blog filename must be a lowercase slug: content/blog/${filename}`,
+    )
+  }
+
+  return slug
+}
 
 export function getPostBySlug(slug: string): PostSummary | null {
   if (!slugPattern.test(slug)) return null
@@ -17,9 +33,9 @@ export function getPostBySlug(slug: string): PostSummary | null {
   if (!fs.existsSync(filePath)) return null
 
   const { data } = matter(fs.readFileSync(filePath, "utf8"))
-  const { draft, ...frontmatter } = parsePostFrontmatter(data, slug)
-  if (draft) return null
+  if (isDraftFrontmatter(data)) return null
 
+  const { draft: _, ...frontmatter } = parsePostFrontmatter(data, slug)
   return { slug, ...frontmatter }
 }
 
@@ -29,9 +45,8 @@ export function getPosts(): PostSummary[] {
   return fs
     .readdirSync(postsDirectory)
     .filter((file) => file.endsWith(".mdx"))
-    .map((file) => file.slice(0, -".mdx".length))
-    .flatMap((slug) => {
-      const post = getPostBySlug(slug)
+    .flatMap((file) => {
+      const post = getPostBySlug(slugFromMdxFilename(file))
       return post ? [post] : []
     })
     .sort((a, b) => b.publishedAt.localeCompare(a.publishedAt))

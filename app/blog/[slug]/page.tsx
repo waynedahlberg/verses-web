@@ -7,8 +7,6 @@ import {
   BreadcrumbItem,
   BreadcrumbLink,
   BreadcrumbList,
-  BreadcrumbPage,
-  BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb"
 import { formatDate } from "@/lib/format-date"
 import { getPostContent, getPosts } from "@/lib/posts"
@@ -41,7 +39,13 @@ export async function generateMetadata({
       description: post.description,
       type: "article",
       publishedTime: post.publishedAt,
-      images: [{ url: post.image, alt: post.title }],
+      images: [{ url: post.image, width: 1200, height: 675, alt: post.title }],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: post.title,
+      description: post.description,
+      images: [post.image],
     },
   }
 }
@@ -62,27 +66,31 @@ export default async function BlogPostPage({
 
   return (
     <div className="relative mx-auto max-w-5xl px-6">
-      <Breadcrumb>
-        <BreadcrumbList>
-          <BreadcrumbItem>
-            <BreadcrumbLink render={<Link href="/blog" />}>Blog</BreadcrumbLink>
-          </BreadcrumbItem>
-          <BreadcrumbSeparator />
-          <BreadcrumbItem>
-            <BreadcrumbPage>{post.title}</BreadcrumbPage>
-          </BreadcrumbItem>
-        </BreadcrumbList>
-      </Breadcrumb>
+      <div className="grid max-lg:gap-4 lg:grid-cols-[1fr_auto_1fr]">
+        <Breadcrumb>
+          <BreadcrumbList>
+            <BreadcrumbItem>
+              <BreadcrumbLink render={<Link href="/blog" />}>
+                Blog
+              </BreadcrumbLink>
+            </BreadcrumbItem>
+          </BreadcrumbList>
+        </Breadcrumb>
 
-      <article className="mt-8">
-        <header className="mb-8 max-w-2xl">
-          <h1 className="mb-6 text-3xl font-bold text-balance text-foreground md:text-4xl md:leading-tight">
-            {post.title}
-          </h1>
-          <p className="mb-8 text-lg leading-relaxed text-muted-foreground">
-            {post.description}
-          </p>
-          <div className="flex flex-wrap items-center justify-between gap-4">
+        <article className="max-w-xl">
+          <header className="mb-8">
+            <time
+              className="text-sm text-muted-foreground"
+              dateTime={post.publishedAt}
+            >
+              {formatDate(post.publishedAt)}
+            </time>
+            <h1 className="mt-6 text-3xl font-bold text-balance text-foreground md:text-4xl md:leading-tight">
+              {post.title}
+            </h1>
+            <p className="my-6 text-lg leading-relaxed text-muted-foreground">
+              {post.description}
+            </p>
             <div className="flex flex-wrap items-center gap-4">
               {post.authors.map((author) => (
                 <div
@@ -104,38 +112,23 @@ export default async function BlogPostPage({
                 </div>
               ))}
             </div>
-            <time
-              className="text-sm text-muted-foreground"
-              dateTime={post.publishedAt}
-            >
-              {formatDate(post.publishedAt)}
-            </time>
-          </div>
-        </header>
+          </header>
 
-        <div className="max-w-2xl">
-          <div className="relative mb-12 overflow-hidden rounded-xl border shadow shadow-black/5">
-            <Image
-              src={post.image}
-              alt=""
-              width={1200}
-              height={675}
-              className="aspect-video w-full object-cover"
-              priority
-            />
+          <div className="max-w-2xl">
+            <div className="relative mb-12 overflow-hidden rounded-xl border shadow shadow-black/5 md:-mx-12 lg:-mx-16">
+              <Image
+                src={post.image}
+                alt=""
+                width={1200}
+                height={675}
+                className="aspect-video w-full object-cover"
+                priority
+              />
+            </div>
+            <Content />
           </div>
-          <Content />
-        </div>
-      </article>
-
-      <footer className="mt-12 border-t bg-muted/50 py-8">
-        <Link
-          href="/blog"
-          className="text-sm text-muted-foreground transition-colors hover:text-foreground"
-        >
-          ← Back to Blog
-        </Link>
-      </footer>
+        </article>
+      </div>
     </div>
   )
 }

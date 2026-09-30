@@ -24,7 +24,6 @@ import {
   ShoppingBag,
   GraduationCap,
   BookOpen,
-  Notebook,
   Croissant,
 } from "lucide-react"
 import { useMedia } from "@/hooks/use-media"
@@ -117,11 +116,6 @@ const contentLinks: FeatureLink[] = [
     href: "#resources",
     icon: <Croissant className="fill-red-500/15 stroke-foreground" />,
   },
-  {
-    name: "Blog",
-    href: "/blog",
-    icon: <Notebook className="fill-zinc-500/15 stroke-foreground" />,
-  },
 ]
 
 const mobileLinks: MobileLink[] = [
@@ -133,8 +127,8 @@ const mobileLinks: MobileLink[] = [
     groupName: "Solutions",
     links: [...useCases, ...contentLinks],
   },
-  { name: "Pricing", href: "#" },
-  { name: "Company", href: "#" },
+  { name: "Blog", href: "/blog" },
+  { name: "Contact", href: "#" },
 ]
 
 export default function Header() {
@@ -372,13 +366,13 @@ const NavMenu = () => {
         </NavigationMenuItem>
         <NavigationMenuItem>
           <NavigationMenuLink
-            render={<Link href="#">Pricing</Link>}
+            render={<Link href="/blog">Blog</Link>}
             className={navigationMenuTriggerStyle()}
           />
         </NavigationMenuItem>
         <NavigationMenuItem>
           <NavigationMenuLink
-            render={<Link href="#">Company</Link>}
+            render={<Link href="#">Contact</Link>}
             className={navigationMenuTriggerStyle()}
           />
         </NavigationMenuItem>

@@ -25,8 +25,16 @@ const links = [
     ],
   },
   {
-    group: "Company",
+    group: "Contact",
     items: [
+      {
+        title: "Blog",
+        href: "/blog",
+      },
+      {
+        title: "Contact",
+        href: "#",
+      },
       {
         title: "About",
         href: "#",

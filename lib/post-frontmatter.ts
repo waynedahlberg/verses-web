@@ -22,6 +22,15 @@ export type PostSummary = Omit<PostFrontmatter, "draft"> & {
   slug: string
 }
 
+export function isDraftFrontmatter(input: unknown): boolean {
+  return (
+    typeof input === "object" &&
+    input !== null &&
+    "draft" in input &&
+    input.draft === true
+  )
+}
+
 export function parsePostFrontmatter(
   input: unknown,
   slug: string,

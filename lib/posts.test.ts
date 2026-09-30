@@ -1,7 +1,10 @@
 import { describe, expect, test } from "bun:test"
 import { formatDate } from "@/lib/format-date"
-import { parsePostFrontmatter } from "@/lib/post-frontmatter"
-import { getPostBySlug, getPosts } from "@/lib/posts"
+import {
+  isDraftFrontmatter,
+  parsePostFrontmatter,
+} from "@/lib/post-frontmatter"
+import { getPostBySlug, getPosts, slugFromMdxFilename } from "@/lib/posts"
 
 const frontmatter = {
   title: "Reading slowly",
@@ -38,6 +41,20 @@ describe("parsePostFrontmatter", () => {
 describe("formatDate", () => {
   test("formats a date-only string without shifting the calendar day", () => {
     expect(formatDate("2026-09-12")).toBe("September 12, 2026")
+  })
+})
+
+describe("blog files", () => {
+  test("treats draft: true as unpublished before the rest of the frontmatter is checked", () => {
+    expect(isDraftFrontmatter({ draft: true })).toBe(true)
+    expect(isDraftFrontmatter({ draft: false, title: "Published" })).toBe(false)
+    expect(isDraftFrontmatter(null)).toBe(false)
+  })
+
+  test("rejects a filename that cannot be a URL slug", () => {
+    expect(() => slugFromMdxFilename("My Post.mdx")).toThrow(
+      "content/blog/My Post.mdx",
+    )
   })
 })
 

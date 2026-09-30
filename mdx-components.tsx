@@ -41,20 +41,22 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
         className,
         "text-primary underline-offset-4 hover:underline",
       )
+      const internal = href.startsWith("/") || href.startsWith("#")
 
-      if (href.startsWith("http")) {
-        return (
-          <a
-            href={href}
-            className={classes}
-            target="_blank"
-            rel="noreferrer"
-            {...props}
-          />
-        )
+      if (internal) {
+        return <Link href={href} {...props} className={classes} />
       }
 
-      return <Link href={href} className={classes} {...props} />
+      const external = href.startsWith("http://") || href.startsWith("https://")
+
+      return (
+        <a
+          {...props}
+          href={href}
+          className={classes}
+          {...(external ? { target: "_blank", rel: "noreferrer" } : {})}
+        />
+      )
     },
     ul: ({ className, ...props }) => (
       <ul

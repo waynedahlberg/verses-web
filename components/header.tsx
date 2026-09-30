@@ -128,7 +128,7 @@ const mobileLinks: MobileLink[] = [
     links: [...useCases, ...contentLinks],
   },
   { name: "Blog", href: "/blog" },
-  { name: "Contact", href: "#" },
+  { name: "Contact", href: "/contact" },
 ]
 
 export default function Header() {
@@ -372,7 +372,7 @@ const NavMenu = () => {
         </NavigationMenuItem>
         <NavigationMenuItem>
           <NavigationMenuLink
-            render={<Link href="#">Contact</Link>}
+            render={<Link href="/contact">Contact</Link>}
             className={navigationMenuTriggerStyle()}
           />
         </NavigationMenuItem>

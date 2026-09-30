@@ -29,9 +29,11 @@ export default function RootLayout({
     <html lang="en" className={faculty.variable} suppressHydrationWarning>
       <body>
         <ThemeProvider>
-          <Header />
-          {children}
-          <FooterSection />
+          <div className="flex min-h-dvh flex-col">
+            <Header />
+            <div className="flex flex-1 flex-col">{children}</div>
+            <FooterSection />
+          </div>
         </ThemeProvider>
       </body>
     </html>

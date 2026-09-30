@@ -24,48 +24,48 @@ export default function HeroSection() {
   return (
     <LazyMotion features={domAnimation}>
       <main className="-mt-14.5 overflow-hidden bg-background">
-          <section>
-            <div className="relative pt-44 pb-36">
-              <div className="absolute inset-x-0 top-0 h-[50rem] overflow-hidden mask-radial-[137%_100%] mask-radial-from-49% mask-radial-at-top">
-                <m.div
-                  style={{ y, minHeight: "100%" }}
-                  className="aspect-video md:aspect-square"
-                >
-                  <Image
-                    src={HERO_BG_LIGHT}
-                    alt="clouds"
-                    width="5000"
-                    height="5000"
-                    className="absolute inset-0 w-full md:-translate-y-1/12 dark:hidden"
-                    priority
-                  />
-                  <Image
-                    src={HERO_BG_DARK}
-                    alt="clouds"
-                    width="5000"
-                    height="5000"
-                    className="absolute inset-0 w-full opacity-50 not-dark:hidden"
-                    priority
-                  />
-                </m.div>
-              </div>
-
-              <div className="relative mx-auto max-w-5xl px-6">
-                <div className="mb-12 text-center">
-                  <div>
-                    <h1 className="mx-auto max-w-2xl font-faculty text-4xl font-normal tracking-tight text-balance md:text-5xl lg:mt-8">
-                      Your Personal AI, With you Anywhere
-                    </h1>
-                    <p className="mx-auto mt-6 max-w-2xl text-xl text-balance">
-                      Craft. Build. Ship Modern Websites.
-                    </p>
-                  </div>
-                </div>
-                <MobileWallet />
-              </div>
+        <section>
+          <div className="relative pt-44 pb-16">
+            <div className="absolute inset-x-0 top-0 h-[50rem] overflow-hidden mask-radial-[137%_100%] mask-radial-from-49% mask-radial-at-top">
+              <m.div
+                style={{ y, minHeight: "100%" }}
+                className="aspect-video md:aspect-square"
+              >
+                <Image
+                  src={HERO_BG_LIGHT}
+                  alt="clouds"
+                  width="5000"
+                  height="5000"
+                  className="absolute inset-0 w-full md:-translate-y-1/12 dark:hidden"
+                  priority
+                />
+                <Image
+                  src={HERO_BG_DARK}
+                  alt="clouds"
+                  width="5000"
+                  height="5000"
+                  className="absolute inset-0 w-full opacity-50 not-dark:hidden"
+                  priority
+                />
+              </m.div>
             </div>
-          </section>
-        </main>
+
+            <div className="relative mx-auto max-w-5xl px-6">
+              <div className="mb-12 text-center">
+                <div>
+                  <h1 className="mx-auto max-w-2xl font-faculty text-4xl font-normal tracking-tight text-balance md:text-5xl lg:mt-8">
+                    Read the scriptures. Every day, everywhere.
+                  </h1>
+                  <p className="mx-auto mt-6 max-w-2xl text-xl text-balance text-muted-foreground">
+                    Verses will help you in your daily reading of the scriptures.
+                  </p>
+                </div>
+              </div>
+              <MobileWallet />
+            </div>
+          </div>
+        </section>
+      </main>
     </LazyMotion>
   )
 }

@@ -8,7 +8,7 @@ const FEATURES_IMAGE =
 
 export default function FeaturesSection() {
   return (
-    <section className="overflow-hidden bg-background py-24">
+    <section className="overflow-hidden bg-background py-12">
       <div className="mx-auto w-full max-w-5xl px-6">
         <div className="grid items-center gap-12 pb-12 md:grid-cols-2">
           <div>

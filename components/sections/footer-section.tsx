@@ -64,9 +64,9 @@ export default function FooterSection() {
                 <span className="block font-medium">{link.group}</span>
 
                 <div className="flex flex-wrap gap-4 sm:flex-col">
-                  {link.items.map((item, index) => (
+                  {link.items.map((item) => (
                     <Link
-                      key={item.href}
+                      key={item.title}
                       href={item.href}
                       className="block text-muted-foreground transition-colors duration-150 hover:text-primary"
                     >

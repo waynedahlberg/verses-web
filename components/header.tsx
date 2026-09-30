@@ -119,7 +119,7 @@ const contentLinks: FeatureLink[] = [
   },
   {
     name: "Blog",
-    href: "#blog",
+    href: "/blog",
     icon: <Notebook className="fill-zinc-500/15 stroke-foreground" />,
   },
 ]

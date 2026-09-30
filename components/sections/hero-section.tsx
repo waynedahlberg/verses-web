@@ -1,5 +1,4 @@
 "use client"
-import HeroHeader from "@/components/header"
 import Image from "next/image"
 import {
   LazyMotion,
@@ -24,9 +23,7 @@ export default function HeroSection() {
 
   return (
     <LazyMotion features={domAnimation}>
-      <>
-        <HeroHeader />
-        <main className="-mt-14.5 overflow-hidden bg-background">
+      <main className="-mt-14.5 overflow-hidden bg-background">
           <section>
             <div className="relative pt-44 pb-36">
               <div className="absolute inset-x-0 top-0 h-[50rem] overflow-hidden mask-radial-[137%_100%] mask-radial-from-49% mask-radial-at-top">
@@ -69,7 +66,6 @@ export default function HeroSection() {
             </div>
           </section>
         </main>
-      </>
     </LazyMotion>
   )
 }

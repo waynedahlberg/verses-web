@@ -8,7 +8,6 @@ import NoteFromMeSection from "@/components/sections/note-from-me"
 import CallToActionSection from "@/components/sections/call-to-action-section"
 import FAQSection from "@/components/sections/faqs-section"
 import ContactSection from "@/components/sections/contact-section"
-import FooterSection from "@/components/sections/footer-section"
 
 export default function Page() {
   return (
@@ -23,7 +22,6 @@ export default function Page() {
       <CallToActionSection />
       <NoteFromMeSection />
       <ContactSection />
-      <FooterSection />
     </main>
   )
 }

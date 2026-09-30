@@ -1,5 +1,7 @@
 import type { Metadata } from "next"
 import { Faculty_Glyphic } from "next/font/google"
+import Header from "@/components/header"
+import FooterSection from "@/components/sections/footer-section"
 import { ThemeProvider } from "@/components/theme-provider"
 import "./globals.css"
 
@@ -11,7 +13,10 @@ const faculty = Faculty_Glyphic({
 })
 
 export const metadata: Metadata = {
-  title: "Verses | Read the Scriptures",
+  title: {
+    default: "Verses | Read the Scriptures",
+    template: "%s · Verses",
+  },
   description: "Verses",
 }
 
@@ -23,7 +28,11 @@ export default function RootLayout({
   return (
     <html lang="en" className={faculty.variable} suppressHydrationWarning>
       <body>
-        <ThemeProvider>{children}</ThemeProvider>
+        <ThemeProvider>
+          <Header />
+          {children}
+          <FooterSection />
+        </ThemeProvider>
       </body>
     </html>
   )

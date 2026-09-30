@@ -1,4 +1,5 @@
 import type { NextConfig } from "next"
+import createMDX from "@next/mdx"
 
 const nextConfig: NextConfig = {
   images: {
@@ -29,4 +30,15 @@ const nextConfig: NextConfig = {
   },
 }
 
-export default nextConfig
+const withMDX = createMDX({
+  options: {
+    remarkPlugins: [
+      "remark-frontmatter",
+      "remark-mdx-frontmatter",
+      "remark-gfm",
+    ],
+    rehypePlugins: ["rehype-slug"],
+  },
+})
+
+export default withMDX(nextConfig)

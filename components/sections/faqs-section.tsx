@@ -54,7 +54,7 @@ export default function FAQSection({
     <section className={cn("bg-background py-16", className)}>
       <div className="mx-auto max-w-5xl px-6">
         <div className="text-center">
-          <h2 className="mt-4 font-faculty text-4xl font-normal tracking-tight">
+          <h2 className="mt-4 font-faculty text-4xl font-normal text-balance tracking-tight">
             {heading}
           </h2>
           <p className="mt-6 font-medium text-muted-foreground">

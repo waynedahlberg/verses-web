@@ -5,7 +5,7 @@ import { FEATURE_CARDS } from "@/components/sections/features-cards"
 export default function FeaturesSection() {
   return (
     <section
-      id="product"
+      id="features"
       className="scroll-mt-24 overflow-hidden bg-background py-12"
     >
       <div className="mx-auto w-full max-w-5xl px-6">

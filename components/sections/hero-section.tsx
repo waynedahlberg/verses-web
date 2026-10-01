@@ -44,10 +44,10 @@ export default function HeroSection() {
               <div className="mb-12 text-center">
                 <div>
                   <h1 className="mx-auto max-w-2xl font-faculty text-4xl font-normal tracking-tight text-balance md:text-5xl lg:mt-8">
-                    Read the scriptures. Every day, everywhere.
+                    The Scriptures,<br />every day.
                   </h1>
                   <p className="mx-auto mt-6 max-w-2xl text-xl text-balance text-muted-foreground">
-                    Verses will help you in your daily reading of the scriptures.
+                    Read and listen to the Standard Works in a simple app built for every day.
                   </p>
                 </div>
               </div>

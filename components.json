@@ -31,6 +31,7 @@
         "x-api-key": "${TAILARK_API_KEY}"
       }
     },
-    "@tailark-oss": "https://oss.tailark.com/r/{name}.json"
+    "@tailark-oss": "https://oss.tailark.com/r/{name}.json",
+    "@shadcnblocks": "https://www.shadcnblocks.com/r/{name}.json"
   }
 }

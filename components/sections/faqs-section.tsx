@@ -1,103 +1,83 @@
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion'
-import Link from 'next/link'
+import { Badge } from "@/components/ui/badge"
+import { cn } from "@/lib/utils"
 
-const faqItems = [
-    {
-        group: 'General',
-        items: [
-            {
-                id: 'item-1',
-                question: 'How long does shipping take?',
-                answer: 'Standard shipping takes 3-5 business days, depending on your location. Express shipping options are available at checkout for 1-2 business day delivery.',
-            },
-            {
-                id: 'item-2',
-                question: 'What payment methods do you accept?',
-                answer: 'We accept all major credit cards (Visa, Mastercard, American Express), PayPal, Apple Pay, and Google Pay. For enterprise customers, we also offer invoicing options.',
-            },
-            {
-                id: 'item-3',
-                question: 'Can I change or cancel my order?',
-                answer: 'You can modify or cancel your order within 1 hour of placing it. After this window, please contact our customer support team who will assist you with any changes.',
-            },
-        ],
-    },
-    {
-        group: 'Shipping',
-        items: [
-            {
-                id: 'item-1',
-                question: 'Do you ship internationally?',
-                answer: 'Standard shipping takes 3-5 business days, depending on your location. Express shipping options are available at checkout for 1-2 business day delivery.',
-            },
-            {
-                id: 'item-2',
-                question: 'What is your return policy?',
-                answer: 'We offer a 30-day return policy for most items. Products must be in original condition with tags attached. Some specialty items may have different return terms, which will be noted on the product page.',
-            },
-            {
-                id: 'item-3',
-                question: 'Do you ship internationally?',
-                answer: 'Standard shipping takes 3-5 business days, depending on your location. Express shipping options are available at checkout for 1-2 business day delivery.',
-            },
-        ],
-    },
+export type FaqItem = {
+  question: string
+  answer: string
+}
+
+export type Faq5Props = {
+  badge?: string
+  heading?: string
+  description?: string
+  faqs?: FaqItem[]
+  className?: string
+}
+
+export const VERSES_FAQS: FaqItem[] = [
+  {
+    question:
+      "Is Verses an official app of The Church of Jesus Christ of Latter-day Saints?",
+    answer:
+      "No. Verses is independently developed and is not affiliated with, endorsed by, or sponsored by The Church of Jesus Christ of Latter-day Saints.",
+  },
+  {
+    question: "What scriptures are included?",
+    answer:
+      "Verses includes the Standard Works: the Bible, the Book of Mormon, the Doctrine and Covenants, and the Pearl of Great Price, using public-domain scripture text.",
+  },
+  {
+    question: "What is Verses designed for?",
+    answer:
+      "Verses is focused on daily scripture reading and listening rather than in-depth study. It keeps the experience centered on the scriptures themselves, with reading goals, progress tracking, reminders, and audio to help you build a consistent daily habit.",
+  },
+  {
+    question: "Is Verses really free?",
+    answer:
+      "Yes. Verses is free to use with no ads, subscriptions, in-app purchases, paywalls, or tip jar.",
+  },
+  {
+    question: "Can I listen to the scriptures?",
+    answer:
+      "Yes. Verses includes audio playback and a synchronized read-along mode that highlights the words as they're spoken, so you can read along or simply listen while you're on the go.",
+  },
 ]
 
-export default function FAQSection() {
-    return (
-        <section className="bg-background py-16 md:py-24">
-            <div className="mx-auto max-w-5xl px-1 md:px-6">
-                <div className="grid max-md:gap-8 md:grid-cols-5 md:divide-x md:border">
-                    <div className="max-w-lg max-md:px-6 md:col-span-2 md:p-10 lg:p-12">
-                        <h2 className="text-4xl font-semibold tracking-tight">FAQs</h2>
-                        <p className="text-muted-foreground mt-4 text-balance text-lg">Your questions answered</p>
-                        <p className="text-muted-foreground mt-6 max-md:hidden">
-                            Can't find what you're looking for? Contact our{' '}
-                            <Link
-                                href="#"
-                                className="text-primary font-medium hover:underline">
-                                customer support team
-                            </Link>
-                        </p>
-                    </div>
-
-                    <div className="space-y-12 md:col-span-3 md:px-4 md:pb-4 md:pt-10 lg:pt-12">
-                        {faqItems.map((item) => (
-                            <div
-                                className="space-y-4"
-                                key={item.group}>
-                                <h3 className="pl-6 text-lg font-semibold">{item.group}</h3>
-                                <Accordion
-                                    className="-space-y-1">
-                                    {item.items.map((item) => (
-                                        <AccordionItem
-                                            key={item.id}
-                                            value={item.id}
-                                            className="data-open:bg-card data-open:ring-border data-open:shadow-black/6.5 group peer rounded-xl border-none px-6 py-1 ring-1 ring-transparent transition-[background-color,box-shadow,ring-color] duration-300 ease-out data-open:border-none data-open:shadow-sm">
-                                            <AccordionTrigger className="cursor-pointer rounded-none text-base not-group-last:border-b hover:no-underline data-panel-open:border-transparent hover:[&>svg]:translate-y-1 hover:data-panel-open:[&>svg]:translate-y-0">
-                                              {item.question}
-                                            </AccordionTrigger>
-                                            <AccordionContent>
-                                                <p className="text-muted-foreground text-base">{item.answer}</p>
-                                            </AccordionContent>
-                                        </AccordionItem>
-                                    ))}
-                                </Accordion>
-                            </div>
-                        ))}
-                    </div>
+export default function FAQSection({
+  badge = "FAQ",
+  heading = "Common Questions & Answers",
+  description = "A few things to know before you start reading and listening.",
+  faqs = VERSES_FAQS,
+  className,
+}: Faq5Props) {
+  return (
+    <section className={cn("bg-background py-32", className)}>
+      <div className="mx-auto max-w-5xl px-6">
+        <div className="text-center">
+          <Badge className="text-xs font-medium">{badge}</Badge>
+          <h2 className="mt-4 font-faculty text-4xl font-normal tracking-tight">
+            {heading}
+          </h2>
+          <p className="mt-6 font-medium text-muted-foreground">
+            {description}
+          </p>
+        </div>
+        <div className="mx-auto mt-14 max-w-xl">
+          {faqs.map((faq, index) => (
+            <div className="mb-8 flex gap-4" key={faq.question}>
+              <span className="flex size-6 shrink-0 items-center justify-center rounded-sm bg-secondary font-mono text-xs text-primary">
+                {index + 1}
+              </span>
+              <div>
+                <div className="mb-2 flex items-center justify-between">
+                  <h3 className="font-medium">{faq.question}</h3>
                 </div>
-
-                <p className="text-muted-foreground mt-12 px-6 md:hidden">
-                    Can't find what you're looking for? Contact our{' '}
-                    <Link
-                        href="#"
-                        className="text-primary font-medium hover:underline">
-                        customer support team
-                    </Link>
-                </p>
+                <p className="text-sm text-muted-foreground">{faq.answer}</p>
+              </div>
             </div>
-        </section>
-    )
+          ))}
+        </div>
+      </div>
+    </section>
+  )
 }

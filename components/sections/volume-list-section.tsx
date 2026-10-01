@@ -105,7 +105,7 @@ export default function VolumeListSection() {
                                 </div>
                                 <div className="min-w-0">
                                     <p className="text-foreground truncate font-medium">{volume.name}</p>
-                                    <p className="text-muted-foreground mt-0.5 truncate text-sm">{volume.description}</p>
+                                    <p className="text-muted-foreground mt-0.5 text-sm">{volume.description}</p>
                                 </div>
                             </div>
                         ))}

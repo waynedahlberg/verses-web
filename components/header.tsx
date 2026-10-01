@@ -5,12 +5,8 @@ import { useScroll, useMotionValueEvent } from "motion/react"
 import { Menu, X } from "lucide-react"
 import { useMedia } from "@/hooks/use-media"
 import { cn } from "@/lib/utils"
-import { AlertDialogInformational6Content } from "@/components/alert-dialog-informational-6"
+import { TestFlightBadge } from "@/components/testflight-badge"
 import { Logo } from "@/components/ui/logo"
-import {
-  AlertDialog,
-  AlertDialogTrigger,
-} from "@/components/ui/alert-dialog"
 import { navigationMenuTriggerStyle } from "@/components/ui/navigation-menu"
 
 const navLinks = [
@@ -81,20 +77,7 @@ export default function Header() {
 
             <div className="mb-6 hidden w-full flex-wrap items-center justify-end space-y-8 in-data-[state=active]:flex max-lg:in-data-[state=active]:mt-6 md:flex-nowrap lg:m-0 lg:flex lg:w-fit lg:gap-6 lg:space-y-0 lg:border-transparent lg:bg-transparent lg:p-0 lg:shadow-none">
               <div className="flex w-full flex-col items-center space-y-3 sm:flex-row sm:gap-3 sm:space-y-0 md:w-fit">
-                <AlertDialog>
-                  <AlertDialogTrigger
-                    aria-label="Available on TestFlight"
-                    className="inline-flex shrink-0 rounded-md outline-none focus-visible:ring-2 focus-visible:ring-ring"
-                    onClick={() => setIsMobileMenuOpen(false)}
-                  >
-                    <img
-                      src="/badges/testflight-badge-blue.svg"
-                      alt=""
-                      className="h-10 w-auto"
-                    />
-                  </AlertDialogTrigger>
-                  <AlertDialogInformational6Content />
-                </AlertDialog>
+                <TestFlightBadge onClick={() => setIsMobileMenuOpen(false)} />
               </div>
             </div>
           </div>

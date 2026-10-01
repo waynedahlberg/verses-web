@@ -42,24 +42,11 @@ export const STANDARD_WORKS_SLIDES: StandardWorksSlide[] = [
       "https://res.cloudinary.com/dewmpixcd/image/upload/v1790805304/verses-website/card-pg_opt_wbsy5k.webp",
   },
   {
-    title: "The Family Proclamation",
+    title: "Proclamations, Prayers & Ordinances",
     description:
-      "is a concise witness of marriage, family, and God's plan for His children.",
+      "includes the Family Proclamation, sacrament prayers, baptisms, and blessings.",
     image:
-      "https://res.cloudinary.com/dewmpixcd/image/upload/v1790805304/verses-website/card-pc_opt_gbbv1k.webp",
+      "https://res.cloudinary.com/dewmpixcd/image/upload/v1790877302/verses-website/card-st_ppifwa.png",
     imageClassName: "opacity-50",
-  },
-  {
-    title: "Prayers & Ordinances",
-    description:
-      "offers words and patterns for ordinances, blessings, and daily prayer.",
-    image:
-      "https://res.cloudinary.com/dewmpixcd/image/upload/v1790805303/verses-website/card-po_opt_csxnry.webp",
-  },
-  {
-    title: "The Missionaries",
-    description: "and how to find representatives in your area.",
-    image:
-      "https://res.cloudinary.com/dewmpixcd/image/upload/v1790805304/verses-website/card-ms_opt_fsk9ej.webp",
   },
 ] as const

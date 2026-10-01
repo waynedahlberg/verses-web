@@ -69,6 +69,16 @@
   --animate-scale-out: scale-out 0.2s ease-in;
   --animate-fade-in: fade-in 0.2s ease-out;
   --animate-fade-out: fade-out 0.2s ease-in;
+  --animate-testimonial-marquee: testimonial-marquee 45s linear infinite;
+
+  @keyframes testimonial-marquee {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
 
   @keyframes accordion-down {
     from {

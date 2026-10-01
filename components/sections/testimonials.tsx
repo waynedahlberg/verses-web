@@ -1,182 +1,112 @@
-import { Hulu } from "@/components/ui/svgs/hulu"
-import { TailwindCSS } from "@/components/ui/svgs/tailwindcss"
-import { Stripe } from "@/components/ui/svgs/stripe"
 import Image from "next/image"
-import type { ReactNode } from "react"
-
-const MESCHAC_AVATAR = "https://avatars.githubusercontent.com/u/47919550?v=4"
-const BERNARD_AVATAR = "https://avatars.githubusercontent.com/u/31113941?v=4"
-const THEO_AVATAR = "https://avatars.githubusercontent.com/u/68236786?v=4"
-const GLODIE_AVATAR = "https://avatars.githubusercontent.com/u/99137927?v=4"
-const SHADCN_AVATAR = "https://avatars.githubusercontent.com/u/124599?v=4"
-const ADAM_AVATAR = "https://avatars.githubusercontent.com/u/4323180?v=4"
-const YVES_AVATAR = "https://avatars.githubusercontent.com/u/55670723?v=4"
-const MICKY_AVATAR = "https://avatars.githubusercontent.com/u/69605071?v=4"
-
-const QUOTES = [
-  {
-    name: "Yves Kalume",
-    role: "Android Engineer, Moneco",
-    avatar: YVES_AVATAR,
-    testimonial:
-      "The platform has dramatically improved our design workflow. We now prototype interfaces 40% faster while maintaining our high-quality standards. The developer experience is truly exceptional.",
-  },
-  {
-    name: "Meschac Irung",
-    role: "Frontend Engineer, Hulu",
-    avatar: MESCHAC_AVATAR,
-    testimonial:
-      "Integrating Tailark into our streaming platform was seamless. The performance gains were immediate, and our user engagement metrics have increased by 25% since implementation.",
-  },
-  {
-    name: "Bernard Ngandu",
-    role: "Backend, Stripe",
-    avatar: BERNARD_AVATAR,
-    testimonial:
-      "As a payment processor, security and reliability are paramount. Tailark delivers on both fronts, with robust testing capabilities that have helped us identify and resolve edge cases before deployment.",
-  },
-  {
-    name: "Glodie Lukose",
-    role: "Engineer, Prime Video",
-    avatar: GLODIE_AVATAR,
-    testimonial:
-      "The A/B testing capabilities have revolutionized how we roll out new features. We can now make data-driven decisions with confidence, leading to a 30% improvement in user retention.",
-  },
-  {
-    name: "Theo Balick",
-    role: "CTO, Tailark",
-    avatar: THEO_AVATAR,
-    testimonial:
-      "Building Tailark has been a journey of continuous improvement. Seeing how our platform empowers developers to create better user experiences makes all the hard work worthwhile.",
-  },
-  {
-    name: "Ras Micky",
-    role: "Software Engineer",
-    avatar: MICKY_AVATAR,
-    testimonial:
-      "The component system in Tailark is a game-changer for UI development. It's helped us standardize our design language while maintaining the flexibility needed for complex interfaces.",
-  },
-]
+import { StarIcon } from "@hugeicons/core-free-icons"
+import { HugeiconsIcon } from "@hugeicons/react"
+import {
+  displayedTestimonials,
+  TESTIMONIALS,
+  testimonialDisplayName,
+  type Testimonial,
+  type TestimonialRating,
+} from "@/components/sections/testimonials-items"
+import { cn } from "@/lib/utils"
 
 export default function TestimonialsSection() {
+  const testimonials = displayedTestimonials(TESTIMONIALS)
+
+  if (testimonials.length === 0) {
+    return null
+  }
+
+  const marqueeItems = [...testimonials, ...testimonials]
+
   return (
-    <section id="reviews" className="bg-background py-12 md:py-24">
+    <section id="reviews" className="scroll-mt-24 overflow-hidden bg-background py-12 md:py-24">
       <div className="mx-auto max-w-5xl px-6">
         <div className="mx-auto max-w-2xl text-center text-balance">
           <h2 className="mb-4 font-faculty text-3xl font-normal tracking-tight md:text-4xl">
-            What our customers are saying about Tailark Quartz
+            What readers are saying
           </h2>
-          <p className="mb-6 text-muted-foreground md:mb-12 lg:mb-16">
-            Join the increasing number of customers and advocates who rely on
-            Tailark for seamless and effective user A/B testing.
+          <p className="text-muted-foreground">
+            Notes from people using Verses to stay with scripture each day.
           </p>
         </div>
+      </div>
 
-        <div className="relative overflow-hidden rounded-xl border border-border/50">
-          <div className="grid gap-px bg-border/50 sm:grid-cols-2 lg:grid-cols-3">
-            <FeaturedCard
-              logo={<TailwindCSS height={20} width={136} />}
-              quote="We've streamlined our entire design process thanks to Tailark. The platform allows us to iterate faster and optimize our component library, leading to a more consistent user experience across all our projects."
-              name="Adam Wathan"
-              role="CEO, Tailwind Labs"
-              avatar={ADAM_AVATAR}
-            />
-            <QuoteCard {...QUOTES[0]} />
-            <QuoteCard {...QUOTES[1]} />
-            <QuoteCard {...QUOTES[2]} />
-            <FeaturedCard
-              logo={<Hulu height={20} width={56} />}
-              quote="Tailark has transformed how we approach frontend development at Hulu. The testing framework helped us reduce bugs by 40% and accelerated our feature deployment pipeline significantly."
-              name="Shadcn"
-              role="Frontend Engineer, Hulu"
-              avatar={SHADCN_AVATAR}
-            />
-            <QuoteCard {...QUOTES[3]} />
-            <QuoteCard {...QUOTES[4]} />
-            <QuoteCard {...QUOTES[5]} />
-            <FeaturedCard
-              logo={<Stripe height={24} width={56} />}
-              quote="The analytics dashboard in Tailark gives us unprecedented visibility into user behavior. We've been able to make targeted improvements that increased our conversion rates by 18%."
-              name="Glodie Lukose"
-              role="Engineer, Stripe"
-              avatar={GLODIE_AVATAR}
-            />
+      <div className="relative mt-10 md:mt-16">
+        <div className="overflow-hidden">
+          <div className="flex w-max gap-4 px-6 animate-testimonial-marquee hover:[animation-play-state:paused] motion-reduce:animate-none">
+            {marqueeItems.map((testimonial, index) => (
+              <QuoteCard
+                key={`${testimonial.firstName}-${testimonial.lastInitial}-${index}`}
+                testimonial={testimonial}
+              />
+            ))}
           </div>
         </div>
+        <div className="pointer-events-none absolute inset-y-0 left-0 w-16 bg-linear-to-r from-background to-transparent sm:w-24" />
+        <div className="pointer-events-none absolute inset-y-0 right-0 w-16 bg-linear-to-l from-background to-transparent sm:w-24" />
       </div>
     </section>
   )
 }
 
-function QuoteCard({
-  name,
-  role,
-  avatar,
-  testimonial,
-}: {
-  name: string
-  role: string
-  avatar: string
-  testimonial: string
-}) {
+function QuoteCard({ testimonial }: { testimonial: Testimonial }) {
   return (
-    <div className="flex flex-col justify-end gap-6 bg-card/40 p-8">
-      <p className="self-end text-balance text-foreground before:mr-1 before:content-['\201C'] after:ml-1 after:content-['\201D']">
-        {testimonial}
+    <article className="flex w-[min(100vw-3rem,22rem)] shrink-0 flex-col gap-5 rounded-xl border bg-card p-5 shadow-xs">
+      <div className="flex items-start justify-between gap-3">
+        <div className="flex min-w-0 items-center gap-3">
+          <Image
+            alt=""
+            className="size-10 shrink-0 rounded-full object-cover ring-1 ring-foreground/10"
+            height={80}
+            src={testimonial.avatar}
+            width={80}
+          />
+          <div className="min-w-0">
+            <p className="truncate text-sm font-medium">
+              {testimonialDisplayName(testimonial)}
+            </p>
+            <p className="truncate text-xs text-muted-foreground">
+              {testimonial.location}
+            </p>
+          </div>
+        </div>
+        <StarRating rating={testimonial.rating} />
+      </div>
+      <p className="text-sm leading-relaxed text-muted-foreground">
+        “{testimonial.quote}”
       </p>
-      <Person name={name} role={role} avatar={avatar} />
-    </div>
+    </article>
   )
 }
 
-function FeaturedCard({
-  logo,
-  quote,
-  name,
-  role,
-  avatar,
-}: {
-  logo: ReactNode
-  quote: string
-  name: string
-  role: string
-  avatar: string
-}) {
+function StarRating({ rating }: { rating: TestimonialRating }) {
   return (
-    <div className="flex flex-col justify-between gap-6 bg-card p-8 shadow-lg shadow-black/10 ring-1 ring-foreground/5">
-      <div className="space-y-6">
-        {logo}
-        <p>&ldquo;{quote}&rdquo;</p>
-      </div>
-      <Person name={name} role={role} avatar={avatar} />
-    </div>
-  )
-}
+    <div
+      aria-label={`${rating} out of 5 stars`}
+      className="flex shrink-0 items-center gap-0.5"
+      role="img"
+    >
+      {Array.from({ length: 5 }, (_, index) => {
+        const filled = index < rating
 
-function Person({
-  name,
-  role,
-  avatar,
-}: {
-  name: string
-  role: string
-  avatar: string
-}) {
-  return (
-    <div className="flex items-center gap-3">
-      <div className="aspect-square size-9 overflow-hidden rounded-lg border border-transparent shadow-md shadow-black/15 ring-1 ring-foreground/10">
-        <Image
-          src={avatar}
-          alt={name}
-          className="size-full object-cover"
-          width={120}
-          height={120}
-        />
-      </div>
-      <div className="space-y-px">
-        <p className="text-sm font-medium">{name}</p>
-        <p className="text-xs text-muted-foreground">{role}</p>
-      </div>
+        return (
+          <HugeiconsIcon
+            aria-hidden
+            className={cn(
+              "size-3.5",
+              filled
+                ? "fill-verses-gold text-verses-gold"
+                : "fill-foreground/40 text-foreground/40",
+            )}
+            color="currentColor"
+            icon={StarIcon}
+            key={index}
+            size={14}
+            strokeWidth={1.5}
+          />
+        )
+      })}
     </div>
   )
 }

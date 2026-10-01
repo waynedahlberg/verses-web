@@ -1,6 +1,7 @@
 import Link from "next/link"
-import { Button } from "@/components/ui/button"
+import { TestFlightBadge } from "@/components/testflight-badge"
 import { CopyrightYear } from "@/components/ui/copyright-year"
+import { Logo } from "@/components/ui/logo"
 
 export const FOOTER_BACKGROUND_IMAGE =
   "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/photos/daniel-leone-g30P1zcOzXo-unsplash.jpg"
@@ -55,7 +56,10 @@ export default function FooterSection() {
                   Verses uses public-domain editions of the Standard Works and does not reproduce Church-owned study materials such as footnotes, cross-references, chapter summaries, the Bible Dictionary, Topical Guide, or other copyrighted study resources.
                 </p>
                 <p>
-                  Scripture audio is generated using AI text-to-speech technology from Mistral AI. Verses is provided free of charge, with no ads, subscriptions, or in-app purchases.
+                  Scripture audio is generated using AI text-to-speech technology from Mistral AI.
+                </p>
+                <p>
+                  <span className="font-medium text-foreground">Verses is provided free of charge, with no ads, subscriptions, or in-app purchases.</span>
                 </p>
               </div>
               <img
@@ -71,25 +75,17 @@ export default function FooterSection() {
           <div className={cardClassName}>
             <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4 lg:gap-12">
               <div className="lg:col-span-1">
-                <div className="mb-4 flex items-center gap-4">
-                  <img
-                    alt=""
-                    className="size-16 rounded-full object-cover"
-                    src="https://deifkwefumgah.cloudfront.net/shadcnblocks/block/avatar/cool-dude.jpg"
-                  />
-                  <h2 className="text-2xl font-medium">Let&apos;s Chat</h2>
-                </div>
-                <p className="mb-6 text-sm leading-relaxed text-muted-foreground">
-                  I&apos;m passionate about creating beautiful, functional
-                  components that make your projects shine. Let&apos;s work
-                  together to bring your vision to life.
-                </p>
-                <Button
-                  nativeButton={false}
-                  render={<Link href="/contact" />}
+                <Link
+                  aria-label="home"
+                  className="mb-4 inline-flex"
+                  href="/"
                 >
-                  Schedule a call
-                </Button>
+                  <Logo className="h-6" />
+                </Link>
+                <p className="mb-6 text-sm leading-relaxed text-muted-foreground">
+                  Verses makes daily scripture reading and listening simple, free, and easy to keep up with.
+                </p>
+                <TestFlightBadge />
               </div>
               <div>
                 <h3 className="mb-4 text-sm font-medium tracking-wider text-primary uppercase">

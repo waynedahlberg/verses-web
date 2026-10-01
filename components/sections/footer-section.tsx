@@ -33,45 +33,11 @@ const cardClassName = "rounded-lg bg-background p-8 shadow-lg md:p-12"
 export default function FooterSection() {
   return (
     <footer
-      className="bg-cover bg-center bg-no-repeat py-16 md:py-32"
+      className="bg-cover bg-center bg-no-repeat py-16 md:py-16"
       style={{ backgroundImage: `url("${FOOTER_BACKGROUND_IMAGE}")` }}
     >
       <div className="mx-auto max-w-5xl px-6">
         <div className="flex flex-col gap-6 md:gap-8">
-          <div className={cardClassName}>
-            <div className="flex flex-col items-center gap-6 md:flex-row md:items-center md:gap-0 md:space-x-24">
-              <div className="min-w-0 flex-1 space-y-2 text-sm leading-relaxed text-muted-foreground">
-                <p className="font-semibold text-foreground uppercase pb-2">
-                  An important note about Verses
-                </p>
-                <p>
-                  Verses is an independent project and is not affiliated with,
-                  sponsored by, or endorsed by{" "}
-                  <span className="font-medium text-foreground">
-                    The Church of Jesus Christ of Latter-day Saints
-                  </span>
-                  .
-                </p>
-                <p>
-                  Verses uses public-domain editions of the Standard Works and does not reproduce Church-owned study materials such as footnotes, cross-references, chapter summaries, the Bible Dictionary, Topical Guide, or other copyrighted study resources.
-                </p>
-                <p>
-                  Scripture audio is generated using AI text-to-speech technology from Mistral AI.
-                </p>
-                <p>
-                  <span className="font-medium text-foreground">Verses is provided free of charge, with no ads, subscriptions, or in-app purchases.</span>
-                </p>
-              </div>
-              <img
-                alt=""
-                className="h-[128px] w-auto shrink-0"
-                height={128}
-                src="/badges/scripture-clipart.svg"
-                width={200}
-              />
-            </div>
-          </div>
-
           <div className={cardClassName}>
             <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4 lg:gap-12">
               <div className="lg:col-span-1">

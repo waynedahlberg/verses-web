@@ -51,10 +51,9 @@ export default function FAQSection({
   className,
 }: Faq5Props) {
   return (
-    <section className={cn("bg-background py-32", className)}>
+    <section className={cn("bg-background py-16", className)}>
       <div className="mx-auto max-w-5xl px-6">
         <div className="text-center">
-          <Badge className="text-xs font-medium">{badge}</Badge>
           <h2 className="mt-4 font-faculty text-4xl font-normal tracking-tight">
             {heading}
           </h2>

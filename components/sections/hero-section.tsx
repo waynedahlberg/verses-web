@@ -46,8 +46,8 @@ export default function HeroSection() {
                   <h1 className="mx-auto max-w-2xl font-faculty text-4xl font-normal tracking-tight text-balance md:text-5xl lg:mt-8">
                     The Scriptures,<br />every day.
                   </h1>
-                  <p className="mx-auto mt-6 max-w-2xl text-xl text-balance text-muted-foreground">
-                    Read and listen to the Standard Works in a simple app built for every day.
+                  <p className="mx-auto mt-6 max-w-2xl text-xl text-balance text-muted-foreground leading-8">
+                    Read and listen to the <span className="underline underline-offset-4">Standard Works</span> in a simple app built for every day.<br /><span className="font-semibold">Independent. Free. No ads or subscriptions.</span>
                   </p>
                 </div>
               </div>

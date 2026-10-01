@@ -18,6 +18,12 @@ export const FOOTER_SOCIAL_LINKS = [
   { title: "LinkedIn", href: "#" },
 ] as const
 
+export const FOOTER_LEGAL_LINKS = [
+  { title: "Terms and Conditions", href: "/legal/terms" },
+  { title: "Privacy Policy", href: "/legal/privacy" },
+  { title: "Cookies", href: "/legal/cookies" },
+] as const
+
 const linkClassName =
   "border-b border-transparent text-muted-foreground transition-all duration-300 ease-in-out hover:border-primary hover:text-primary"
 
@@ -32,19 +38,33 @@ export default function FooterSection() {
       <div className="mx-auto max-w-5xl px-6">
         <div className="flex flex-col gap-6 md:gap-8">
           <div className={cardClassName}>
-            <div className="space-y-2 text-sm leading-relaxed text-muted-foreground">
-              <p className="font-medium text-foreground">Important Disclaimer</p>
-              <p>
-                Verses is not affiliated with{" "}
-                <span className="font-medium text-foreground">
-                  The Church of Jesus Christ of Latter-day Saints
-                </span>
-                . No endorsement is expressed or implied.
-              </p>
-              <p>
-                Scripture content is sourced from the public domain. Audio
-                content is created with intelligence models from Mixtral AI.
-              </p>
+            <div className="flex flex-col items-center gap-6 md:flex-row md:items-center md:gap-0 md:space-x-24">
+              <div className="min-w-0 flex-1 space-y-2 text-sm leading-relaxed text-muted-foreground">
+                <p className="font-semibold text-foreground uppercase pb-2">
+                  An important note about Verses
+                </p>
+                <p>
+                  Verses is an independent project and is not affiliated with,
+                  sponsored by, or endorsed by{" "}
+                  <span className="font-medium text-foreground">
+                    The Church of Jesus Christ of Latter-day Saints
+                  </span>
+                  .
+                </p>
+                <p>
+                  Verses uses public-domain editions of the Standard Works and does not reproduce Church-owned study materials such as footnotes, cross-references, chapter summaries, the Bible Dictionary, Topical Guide, or other copyrighted study resources.
+                </p>
+                <p>
+                  Scripture audio is generated using AI text-to-speech technology from Mistral AI. Verses is provided free of charge, with no ads, subscriptions, or in-app purchases.
+                </p>
+              </div>
+              <img
+                alt=""
+                className="h-[128px] w-auto shrink-0"
+                height={128}
+                src="/badges/scripture-clipart.svg"
+                width={200}
+              />
             </div>
           </div>
 
@@ -123,18 +143,15 @@ export default function FooterSection() {
                 in Utah
               </p>
               <div className="flex flex-wrap justify-center gap-4">
-                <Link
-                  className="text-sm text-muted-foreground transition-colors hover:text-primary"
-                  href="#"
-                >
-                  Terms and Conditions
-                </Link>
-                <Link
-                  className="text-sm text-muted-foreground transition-colors hover:text-primary"
-                  href="#"
-                >
-                  Privacy Policy
-                </Link>
+                {FOOTER_LEGAL_LINKS.map((item) => (
+                  <Link
+                    key={item.href}
+                    className="text-sm text-muted-foreground transition-colors hover:text-primary"
+                    href={item.href}
+                  >
+                    {item.title}
+                  </Link>
+                ))}
               </div>
             </div>
           </div>

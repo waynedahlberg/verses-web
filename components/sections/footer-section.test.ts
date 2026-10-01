@@ -1,5 +1,6 @@
 import { describe, expect, test } from "bun:test"
 import {
+  FOOTER_LEGAL_LINKS,
   FOOTER_PRODUCT_LINKS,
   FOOTER_SOCIAL_LINKS,
 } from "./footer-section"
@@ -19,6 +20,14 @@ describe("footer 25", () => {
       "Twitter",
       "Instagram",
       "LinkedIn",
+    ])
+  })
+
+  test("points legal links at the published policy pages", () => {
+    expect(FOOTER_LEGAL_LINKS).toEqual([
+      { title: "Terms and Conditions", href: "/legal/terms" },
+      { title: "Privacy Policy", href: "/legal/privacy" },
+      { title: "Cookies", href: "/legal/cookies" },
     ])
   })
 })
